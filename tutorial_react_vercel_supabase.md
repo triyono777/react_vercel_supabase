@@ -456,6 +456,16 @@ Lalu buka:
 http://localhost:5173
 ```
 
+jika error , jalankan
+```
+rm -rf node_modules/.vite
+```
+dan install lagi
+```
+npm install
+```
+
+
 Checklist pengujian lokal:
 
 1. Register user baru.
