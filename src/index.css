@@ -1,11 +1,12 @@
 :root {
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: "Segoe UI", "Inter", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #0f172a;
   background:
-    radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.2), transparent 30%),
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(45, 212, 191, 0.16), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(251, 191, 36, 0.14), transparent 26%),
     linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,9 +27,15 @@ body,
 
 body {
   min-width: 320px;
+  color: #0f172a;
 }
 
 button,
 input {
   font: inherit;
+}
+
+code,
+pre {
+  font-family: "SFMono-Regular", "Consolas", monospace;
 }
