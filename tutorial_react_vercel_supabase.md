@@ -12,6 +12,8 @@ Hasil akhir yang akan dibuat:
 - User bisa menambah dan melihat todo miliknya sendiri
 - Aplikasi bisa dijalankan lokal lalu dideploy ke Vercel
 
+Tutorial ini sekarang juga dilengkapi screenshot referensi dari folder `image_tutorial/` agar langkah setup lebih mudah diikuti.
+
 ## 1. Gambaran Arsitektur
 
 Alur aplikasinya sederhana:
@@ -77,6 +79,14 @@ Catatan penting:
 - Untuk frontend React, gunakan `Publishable key`.
 - Jangan pernah menaruh `service_role` atau secret key di aplikasi frontend.
 
+Contoh tampilan halaman awal Supabase:
+
+![Halaman awal Supabase](./image_tutorial/supabase_home_page.png)
+
+Setelah data mulai terisi, dashboard Supabase Anda kurang lebih akan terlihat seperti ini:
+
+![Dashboard Supabase dengan data](./image_tutorial/supabase_dengan_data.png)
+
 ## 5. Atur Auth Di Supabase
 
 Untuk tutorial ini kita pakai email/password.
@@ -97,6 +107,10 @@ Catatan produksi:
 
 - Untuk produksi, pertimbangkan tetap mengaktifkan verifikasi email.
 - Layanan email default Supabase terbatas untuk pengujian. Untuk produksi, siapkan custom SMTP.
+
+Contoh letak pengaturan `Confirm email` di Supabase:
+
+![Pengaturan confirm email di Supabase](./image_tutorial/supabase_setting_confirm_email.png)
 
 ## 6. Buat Tabel Todo + RLS
 
@@ -146,6 +160,10 @@ Kenapa setup ini penting:
 - `RLS` menjaga data tidak otomatis terbuka.
 - Policy `auth.uid() = user_id` memastikan tiap user hanya bisa mengakses baris miliknya sendiri.
 - Untuk operasi `update`, policy `select` juga penting agar update tidak diam-diam gagal.
+
+Contoh tampilan `SQL Editor` saat menjalankan schema:
+
+![SQL Editor Supabase](./image_tutorial/supabase_sql_editor.png)
 
 ## 7. Buat Project React Dengan Vite
 
@@ -420,6 +438,10 @@ Catatan kecil:
 - Tombol `Register` memakai `type="button"` supaya tidak ikut submit ke login handler.
 - Fungsi `signUp` bisa berhasil tetapi session belum aktif kalau verifikasi email diwajibkan.
 
+Tampilan halaman login pada project contoh:
+
+![Halaman login aplikasi React](./image_tutorial/login_page.png)
+
 ## 11. Jalankan Lokal
 
 Jalankan:
@@ -442,6 +464,10 @@ Checklist pengujian lokal:
 4. Tambahkan todo.
 5. Refresh browser dan cek data tetap ada.
 6. Login dengan akun lain dan pastikan todo user pertama tidak terlihat.
+
+Jika semua langkah benar, halaman utama aplikasi kurang lebih terlihat seperti ini:
+
+![Halaman utama aplikasi React](./image_tutorial/home_page.png)
 
 ## 12. Push Ke Git Repository
 
@@ -484,6 +510,14 @@ Ada 2 cara umum: lewat dashboard atau CLI. Untuk pemula, dashboard biasanya pali
    - `Production`
    - `Preview`
 8. Klik `Deploy`.
+
+Contoh halaman awal Vercel sebelum import project:
+
+![Halaman awal Vercel](./image_tutorial/vercel_home_page.png)
+
+Contoh dashboard project di Vercel setelah aplikasi berhasil terhubung:
+
+![Dashboard project di Vercel](./image_tutorial/dashbiard_vercel.png)
 
 ### Opsi B: Deploy lewat Vercel CLI
 
